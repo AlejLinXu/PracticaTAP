@@ -10,6 +10,7 @@ import java.util.function.Function;
 public class Controller<T, V> {
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
+    private HashMap<String, Integer> mapRam;
 
     public Controller() {
         listInvokers = new ArrayList<>();
@@ -17,10 +18,12 @@ public class Controller<T, V> {
             this.listInvokers.add(i, new Invoker());
         }
         this.mapActions = new HashMap<>();
+        this.mapRam = new HashMap<String, Integer>(4, 4);
     }
 
-    public void registerAction(String action, Function<T, V> f) {
+    public void registerAction(String action, Function<T, V> f, int ram) {
         this.mapActions.put(action, f);
+        this.mapRam.put(action, ram);
     }
 
     public Object invoke(String actionName, Map<String, Integer> params) {

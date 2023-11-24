@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutorService;
 
 public class Invoker implements InvokerInterface {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private int ram = 1024;
     public Invoker() {
 
     }
@@ -15,5 +16,12 @@ public class Invoker implements InvokerInterface {
 
     public Future<Object> executeActionAsync(Function<Object, Object> action, Object params) {
         return executorService.submit(() -> action.apply(params));
+    }
+    //getters y setters RAM
+    public int getRam() {
+        return ram;
+    }
+    public void setRam(int ram) {
+        this.ram = ram;
     }
 }
