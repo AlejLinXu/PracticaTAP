@@ -1,10 +1,12 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.function.Function;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         Controller<Map<String, Integer>, Integer> controller = new Controller<>();
         Function<Map<String, Integer>, Integer> f = x -> x.get("x") - x.get("y");
         controller.registerAction("addAction", f);
@@ -21,5 +23,10 @@ public class Main {
             int itemList = (int) controller.invoke("addAction", inputs);
             System.out.println(itemList);
         });
+
+        Future future = controller.invokeAsync("addAction", Map.of("x", 6, "y", 2));
+        System.out.println(future.get());
     }
 }
+
+
