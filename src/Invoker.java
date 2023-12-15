@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutorService;
 public class Invoker implements InvokerInterface {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
     private int ram = 1024;
+    private static int availableRam = 1024;
     public Invoker() {
 
     }
@@ -21,7 +22,12 @@ public class Invoker implements InvokerInterface {
     public int getRam() {
         return ram;
     }
+
+    public int getAvailableRam() {
+        return availableRam;
+    }
+
     public void setRam(int ram) {
-        this.ram = ram;
+        this.availableRam = availableRam - ram;
     }
 }

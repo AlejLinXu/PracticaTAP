@@ -29,17 +29,27 @@ public class Controller<T, V> {
     public Object invoke(String actionName, Map<String, Integer> params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
         if (action != null){
+            if(listInvokers.get(0).getAvailableRam() > mapRam.get(actionName)){
+                listInvokers.get(0).setRam(mapRam.get(actionName));
+            }
+            else throw new IllegalArgumentException("Not enough RAM");
+
             return listInvokers.get(0).executeAction(action, params);
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
     public Future<Object> invokeAsync(String actionName, Map<String, Integer> params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
-        if (action != null){
-            return listInvokers.get(0).executeActionAsync(action, params);
+        if (action != null) {
+            if (listInvokers.get(0).getAvailableRam() > mapRam.get(actionName)) {
+                listInvokers.get(0).setRam(mapRam.get(actionName));
+            } else throw new IllegalArgumentException("Not enough RAM");
+
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
+        return listInvokers.get(0).executeActionAsync(action, params);
     }
+
 
     public Future<Object> invokeAsyncInt (String actionName, int params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
