@@ -11,6 +11,17 @@ public class Controller<T, V> {
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
     private HashMap<String, Integer> mapRam;
+    private IPolicyManager policy;
+
+    public Controller (IPolicyManager policy) {
+        listInvokers = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            this.listInvokers.add(i, new Invoker());
+        }
+        this.mapActions = new HashMap<>();
+        this.mapRam = new HashMap<String, Integer>(4, 4);
+        this.policy = policy;
+    }
 
     public Controller() {
         listInvokers = new ArrayList<>();
