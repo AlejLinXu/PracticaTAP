@@ -10,12 +10,10 @@ public class BigGroupStrategy implements IPolicyManager{
 
     @Override
     public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
-        if (invokers.isEmpty() || functions.isEmpty()) {
+        List<Invoker> freeInvokers = invokers.stream().filter(invoker -> invoker.getAvailableRam() >= 0).toList();
+        if (freeInvokers.isEmpty()) {
             return null;
         }
-        Invoker invokerAux = null;
-        int numFunctions = functions.size();
-        int numInvokers = invokers.size();
-
+        return freeInvokers.get(0);
     }
 }
