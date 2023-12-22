@@ -9,22 +9,33 @@ public class UniformGroupStrategy implements IPolicyManager{
         this.groupSize = groupSize;
     }
 
-    @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
-        if (invokers.isEmpty() || functions.isEmpty()) {
-            return null;
-        }
-        Invoker invokerAux = null;
-        int numFunctions = functions.size();
-        int numInvokers = invokers.size();
-        int functionsPerInvoker = numFunctions/numInvokers;
-        int remainingFunctions = numFunctions % numInvokers;
+//    @Override
+//    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
+//        if (invokers.isEmpty() || functions.isEmpty()) {
+//            return null;
+//        }
+//        Invoker invokerAux = null;
+//        int numFunctions = functions.size();
+//        int numInvokers = invokers.size();
+//        int functionsPerInvoker = numFunctions/numInvokers;
+//        int remainingFunctions = numFunctions % numInvokers;
+//
+//        for (Invoker invoker : invokers) {
+//            if (groupSize > functionsPerInvoker && remainingFunctions != 0) {
+//                invokerAux = invoker;
+//                remainingFunctions--;
+//                return invoker;
+//            }
+//        }
+//    }
 
-        for (Invoker invoker : invokers) {
-            if (groupSize > functionsPerInvoker && remainingFunctions != 0) {
-                invokerAux = invoker;
-                remainingFunctions--;
-                return invoker;
+    @Override
+    public void assignFunction(List<Invoker> invokers, List<Function> functions) {
+        List<Invoker> availableInvokers = invokers.stream().filter(invoker -> invoker.getAvailableRam() >= 0).toList();
+
+        for (Invoker invoker: availableInvokers){
+            if (invoker.getAvailableRam() >= 0){
+
             }
         }
     }

@@ -15,6 +15,7 @@ public class Main {
         System.out.println(res);
 
 
+
         List<Map<String, Integer>> input = Arrays.asList(
                 Map.of("x", 2, "y", 3),
                 Map.of("x", 9, "y", 1),

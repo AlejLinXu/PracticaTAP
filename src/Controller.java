@@ -49,6 +49,7 @@ public class Controller<T, V> {
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
+
     public Future<Object> invokeAsync(String actionName, Map<String, Integer> params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
         if (action != null) {

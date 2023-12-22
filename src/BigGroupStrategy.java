@@ -4,7 +4,6 @@ import java.util.function.Function;
 public class BigGroupStrategy implements IPolicyManager{
     //coloca los grupos empaquetados si es posible.
     private int groupSize;
-
     public BigGroupStrategy(int groupSize) {
         this.groupSize = groupSize;
     }

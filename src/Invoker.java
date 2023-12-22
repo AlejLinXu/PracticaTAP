@@ -30,4 +30,10 @@ public class Invoker implements InvokerInterface {
     public void setRam(int ram) {
         this.availableRam = availableRam - ram;
     }
+
+    public void setFunction (Function<Object, Object> action, Object params){
+        this.executeAction(action, params);
+    }
+
+
 }

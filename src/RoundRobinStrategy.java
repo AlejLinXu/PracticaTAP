@@ -18,9 +18,6 @@ public class RoundRobinStrategy implements IPolicyManager {
                 // Eliminamos el invoker de la lista
                 invokers.remove(0);
                 // Asignamos la función al invoker
-
-
-
             }
         }
         return invokerAux;

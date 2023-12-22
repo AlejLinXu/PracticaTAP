@@ -16,5 +16,5 @@ public class GreadyGroupStrategy implements IPolicyManager {
                 //invoker.setRam(invoker.getAvailableRam() - function.getMemoryRequirement());
             }
         }
-    }
+
 }
