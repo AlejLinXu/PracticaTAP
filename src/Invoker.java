@@ -46,7 +46,11 @@ public class Invoker implements InvokerInterface {
         this.numAssignedFunctions = numAssignedFunctions;
     }
 
-    public String getAssignedFunction(Function f) {
-        return f.toString();
+    public List<Function> getAssignedFunctions() {
+        return assignedFunctions;
+    }
+
+    public void addFunction(Function function) {
+        assignedFunctions.add(function);
     }
 }

@@ -46,7 +46,6 @@ public class StrategyTest {
     }
 
     @Test
-
     public void testRoundRobinStrategy(){
         System.out.println("ROUND ROBIN STRATEGY TEST");
 
@@ -70,31 +69,24 @@ public class StrategyTest {
         Function<Map<String, Integer>, Integer> function11 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function12 = x -> x.get("x") + x.get("y") + x.get("z");
 
-
-
         List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
 
+        for (Function function : functions) {
+            System.out.println("Function: " + function);
+        }
         invoker1.setAvailableRam(10);
         invoker2.setAvailableRam(10);
         invoker3.setAvailableRam(10);
 
-        List<Invoker> freeInvokers = invokers.stream()
-                .filter(invoker -> invoker.getAvailableRam() > 0)
-                .toList();
-
-        int functionsPerInvoker = functions.size() / freeInvokers.size();
-
-        for (Invoker invoker : invokers){
-            for(Function function : functions) {
-                if (invoker.getNumAssignedFunctions() < functionsPerInvoker) {
-                    Invoker assignedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
-                    assignedInvoker.setNumAssignedFunctions(assignedInvoker.getNumAssignedFunctions() + 1);
-                }
-            }
+        for (Function function : functions){
+            Invoker assignedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+            assignedInvoker.setNumAssignedFunctions(assignedInvoker.getNumAssignedFunctions() + 1);
+            assignedInvoker.addFunction(function);
         }
 
         for (Invoker invoker: invokers){
             System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions");
+            invoker.getAssignedFunctions().forEach(System.out::println);
         }
 
     }

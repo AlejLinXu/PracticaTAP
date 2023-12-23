@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="GreadyGroupStrategy funciona">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RoundRobinStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoundRobinStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

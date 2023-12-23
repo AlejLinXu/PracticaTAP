@@ -1,12 +1,6 @@
 import java.util.List;
 import java.util.function.Function;
 
-import java.util.List;
-import java.util.function.Function;
-
-import java.util.List;
-import java.util.function.Function;
-
 public class RoundRobinStrategy implements IPolicyManager {
     @Override
     public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
@@ -24,7 +18,6 @@ public class RoundRobinStrategy implements IPolicyManager {
             return null;
         }
 
-        // Return the first assignable invoker
         return assignableInvokers.get(0);
     }
 }
