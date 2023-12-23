@@ -70,9 +70,9 @@ public class StrategyTest {
         System.out.println("List of invokers "+invokers);
         System.out.println("List of functions: " + functions);
 
-        invoker1.setAvailableRam(10);
-        invoker2.setAvailableRam(10);
-        invoker3.setAvailableRam(10);
+        invoker1.setAvailableRam(2);
+        invoker2.setAvailableRam(6);
+        invoker3.setAvailableRam(4);
 
         for (FunctionWithRam function : functions) {
             Invoker selectedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
