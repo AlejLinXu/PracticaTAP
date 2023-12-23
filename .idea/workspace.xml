@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Commit (fuck off)">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="GreadyGroupStrategy funciona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticaTAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticaTAP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GreadyGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GreadyGroupStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IPolicyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPolicyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPolicyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPolicyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RoundRobinStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoundRobinStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,8 @@
     "Application.MainPolicyManager.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.GreadyGroupStrategyTest.testAssignFunction.executor": "Run",
+    "JUnit.StrategyTest.GreadyGroupTest.executor": "Run",
+    "JUnit.StrategyTest.testRoundRobinStrategy.executor": "Run",
     "JUnit.Tests.executor": "Run",
     "JUnit.Tests.testGReadyGroupStrategy.executor": "Run",
     "JUnit.Tests.testGreadyGroupStrategy.executor": "Run",
@@ -69,50 +72,51 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tests.testGreadyGroupStrategy">
-    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StrategyTest.GreadyGroupTest">
+    <configuration name="StrategyTest.GreadyGroupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PracticaTAP" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.testGReadyGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PracticaTAP" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testGReadyGroupStrategy" />
+      <option name="MAIN_CLASS_NAME" value="StrategyTest" />
+      <option name="METHOD_NAME" value="GreadyGroupTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testGreadyGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StrategyTest.testRoundRobinStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PracticaTAP" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tests" />
-      <option name="METHOD_NAME" value="testGreadyGroupStrategy" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.testRoundRobinStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PracticaTAP" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="StrategyTest" />
       <option name="METHOD_NAME" value="testRoundRobinStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testUniformGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.testGReadyGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PracticaTAP" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="tests" />
+      <option name="METHOD_NAME" value="testGReadyGroupStrategy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests.testGreadyGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PracticaTAP" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="tests" />
+      <option name="METHOD_NAME" value="testGreadyGroupStrategy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests.testUniformGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PracticaTAP" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="tests" />
       <option name="METHOD_NAME" value="testUniformGroupStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -121,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tests.testGreadyGroupStrategy" />
-        <item itemvalue="JUnit.Tests.testGReadyGroupStrategy" />
-        <item itemvalue="JUnit.Tests.testUniformGroupStrategy" />
-        <item itemvalue="JUnit.Tests.testRoundRobinStrategy" />
-        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.StrategyTest.GreadyGroupTest" />
+        <item itemvalue="JUnit.StrategyTest.testRoundRobinStrategy" />
+        <item itemvalue="JUnit.tests.testGreadyGroupStrategy" />
+        <item itemvalue="JUnit.tests.testGReadyGroupStrategy" />
+        <item itemvalue="JUnit.tests.testUniformGroupStrategy" />
       </list>
     </recent_temporary>
   </component>

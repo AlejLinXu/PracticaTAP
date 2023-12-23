@@ -7,6 +7,7 @@ public class Invoker implements InvokerInterface {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
     private int ram = 1024;
     private int availableRam = 1024;
+    private int assignedFunctions = 0;
     public Invoker() {
 
     }
@@ -32,5 +33,13 @@ public class Invoker implements InvokerInterface {
 
     public void setRam(int ram) {
         this.availableRam = availableRam - ram;
+    }
+
+    public int getAssignedFunctions() {
+        return assignedFunctions;
+    }
+
+    public void setAssignedFunctions(int assignedFunctions) {
+        this.assignedFunctions = assignedFunctions;
     }
 }

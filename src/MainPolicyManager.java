@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 public class MainPolicyManager {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-Controller<Integer, String> controller = new Controller<>(new RoundRobinStrategy()); //asignamos politica al controller
+Controller<Integer, String> controller = new Controller<>(); //asignamos politica al controller
         Function<Integer, String> sleep = s -> {
             try {
                 Thread.sleep(5000);

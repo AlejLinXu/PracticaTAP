@@ -9,6 +9,7 @@ public class GreadyGroupStrategy implements IPolicyManager {
         if (freeInvokers.isEmpty()) {
             return null;
         }
+
         Invoker invokerAux = new Invoker();
         invokerAux.setAvailableRam(-1);
         for (Invoker invoker : freeInvokers) {
