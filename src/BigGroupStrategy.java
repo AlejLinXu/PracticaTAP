@@ -9,7 +9,7 @@ public class BigGroupStrategy implements IPolicyManager{
     }
 
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
         List<Invoker> freeInvokers = invokers.stream().filter(invoker -> invoker.getAvailableRam() >= 0).toList();
         if (freeInvokers.isEmpty()) {
             return null;

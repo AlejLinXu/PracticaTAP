@@ -1,22 +1,33 @@
 import java.util.List;
-import java.util.function.Function;
 
 public class UniformGroupStrategy implements IPolicyManager {
     //define un tamaño de grupo (6 por ejemplo) y que coloca de manera uniforme entre todos los Invokers
-    private int groupSize;
+    private final int groupSize;
 
     public UniformGroupStrategy(int groupSize) {
         this.groupSize = groupSize;
     }
 
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
-        List<Invoker> freeInvokers = invokers.stream().filter(invoker -> invoker.getAvailableRam() >= 0).toList();
-        if (freeInvokers.isEmpty()) {
+    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
+        List<Invoker> freeInvokers = invokers.stream()
+                .filter(invoker -> invoker.getAvailableRam() > 0)
+                .toList();
+
+        if (functions.isEmpty() || freeInvokers.isEmpty() || groupSize <= 0) {
             return null;
         }
-        int index = functions.size() % freeInvokers.size();
-        return freeInvokers.get(index);
+
+        Invoker selectedInvoker = new Invoker();
+        selectedInvoker.setAvailableRam(0);
+
+        for (Invoker invoker : freeInvokers) {
+            if (invoker.getNumAssignedFunctions() < groupSize && invoker.getAvailableRam() > selectedInvoker.getAvailableRam()){
+                selectedInvoker = invoker;
+                break;
+            }
+        }
+        return selectedInvoker;
     }
 }
 

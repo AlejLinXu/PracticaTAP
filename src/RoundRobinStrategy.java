@@ -3,21 +3,28 @@ import java.util.function.Function;
 
 public class RoundRobinStrategy implements IPolicyManager {
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
+        //Filtramos los invokers que tienen RAM disponible
         List<Invoker> freeInvokers = invokers.stream()
                 .filter(invoker -> invoker.getAvailableRam() > 0)
                 .toList();
-
-        int functionsPerInvoker = functions.size() / freeInvokers.size();
-
-        List<Invoker> assignableInvokers = freeInvokers.stream()
-                .filter(invoker -> invoker.getNumAssignedFunctions() < functionsPerInvoker)
-                .toList();
-
-        if (functions.isEmpty() || assignableInvokers.isEmpty()) {
+        //Si no hay invokers disponibles o no hay funciones, devolvemos null
+        if (functions.isEmpty() || freeInvokers.isEmpty()) {
             return null;
         }
 
-        return assignableInvokers.get(0);
+        //Creamos un invoker auxiliar para comparar con los demás
+        Invoker selectedInvoker = new Invoker();
+        selectedInvoker.setAvailableRam(0);
+
+        //Recorremos los invokers disponibles y nos quedamos con el que tenga más RAM disponible
+        for (Invoker invoker : freeInvokers) {
+            if (invoker.getAvailableRam() > selectedInvoker.getAvailableRam()) {
+                selectedInvoker = invoker;
+            }
+        }
+
+        return selectedInvoker;
     }
+
 }
