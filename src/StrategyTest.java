@@ -85,9 +85,11 @@ public class StrategyTest {
         int functionsPerInvoker = functions.size() / freeInvokers.size();
 
         for (Invoker invoker : invokers){
-            if (invoker.getNumAssignedFunctions() < functionsPerInvoker) {
-                Invoker assignedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
-                assignedInvoker.setNumAssignedFunctions(assignedInvoker.getNumAssignedFunctions() + 1);
+            for(Function function : functions) {
+                if (invoker.getNumAssignedFunctions() < functionsPerInvoker) {
+                    Invoker assignedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+                    assignedInvoker.setNumAssignedFunctions(assignedInvoker.getNumAssignedFunctions() + 1);
+                }
             }
         }
 
