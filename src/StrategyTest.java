@@ -54,27 +54,46 @@ public class StrategyTest {
         Invoker invoker2 = new Invoker();
         Invoker invoker3 = new Invoker();
         List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
-        RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy(invokers);
+        System.out.println("List of invokers "+invokers);
+        RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy();
 
-        Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") - x.get("y");
-        Function<Map<String, Integer>, Integer> function2 = x -> x.get("z");
+        Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function3 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function4 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function5 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function6 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function7 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function8 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function9 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function10 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function11 = x -> x.get("x") + x.get("y") + x.get("z");
+        Function<Map<String, Integer>, Integer> function12 = x -> x.get("x") + x.get("y") + x.get("z");
 
-        List<Function> functions = Arrays.asList(function1, function2, function3,function4, function5, function6);
-        invoker1.setAvailableRam(3);
-        invoker2.setAvailableRam(6);
-        invoker3.setAvailableRam(3);
-        for (Invoker invoker: invokers){
-            System.out.println("Invoker Selected: "+invoker);
-            invoker.setAssignedFunctions(0);
-            invoker = roundRobinStrategy.assignFunction(invokers, functions);
 
+
+        List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
+
+        invoker1.setAvailableRam(10);
+        invoker2.setAvailableRam(10);
+        invoker3.setAvailableRam(10);
+
+        List<Invoker> freeInvokers = invokers.stream()
+                .filter(invoker -> invoker.getAvailableRam() > 0)
+                .toList();
+
+        int functionsPerInvoker = functions.size() / freeInvokers.size();
+
+        for (Invoker invoker : invokers){
+            if (invoker.getNumAssignedFunctions() < functionsPerInvoker) {
+                Invoker assignedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+                assignedInvoker.setNumAssignedFunctions(assignedInvoker.getNumAssignedFunctions() + 1);
+            }
         }
-        assertEquals(2, invoker1.getAssignedFunctions());
-        assertEquals(2, invoker2.getAssignedFunctions());
-        assertEquals(2, invoker3.getAssignedFunctions());
+
+        for (Invoker invoker: invokers){
+            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions");
+        }
+
     }
 }

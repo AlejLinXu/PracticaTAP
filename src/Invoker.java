@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.function.Function;
 import java.util.concurrent.Future;
@@ -7,7 +9,8 @@ public class Invoker implements InvokerInterface {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
     private int ram = 1024;
     private int availableRam = 1024;
-    private int assignedFunctions = 0;
+    private int numAssignedFunctions = 0;
+    private List<Function> assignedFunctions = new ArrayList<>();
     public Invoker() {
 
     }
@@ -35,11 +38,15 @@ public class Invoker implements InvokerInterface {
         this.availableRam = availableRam - ram;
     }
 
-    public int getAssignedFunctions() {
-        return assignedFunctions;
+    public int getNumAssignedFunctions() {
+        return numAssignedFunctions;
     }
 
-    public void setAssignedFunctions(int assignedFunctions) {
-        this.assignedFunctions = assignedFunctions;
+    public void setNumAssignedFunctions(int numAssignedFunctions) {
+        this.numAssignedFunctions = numAssignedFunctions;
+    }
+
+    public String getAssignedFunction(Function f) {
+        return f.toString();
     }
 }
