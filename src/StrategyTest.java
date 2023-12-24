@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
@@ -153,7 +153,7 @@ public class StrategyTest {
         Invoker invoker3 = new Invoker();
         List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
 
-        BigGroupStrategy bigGroupStrategy = new BigGroupStrategy();
+        BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(4);
 
         FunctionWithRam function1 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 2);
         FunctionWithRam function2 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 2);
@@ -186,8 +186,13 @@ public class StrategyTest {
                 selectedInvoker.addFunction(function);
                 selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
 
-                invoker.getAssignedFunctions().forEach(System.out::println);
             }
+
+        }
+
+        for (Invoker invoker : invokers) {
+            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions");
+            invoker.getAssignedFunctions().forEach(System.out::println);
         }
     }
 }

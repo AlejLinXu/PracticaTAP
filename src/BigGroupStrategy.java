@@ -9,7 +9,7 @@ public class BigGroupStrategy implements IPolicyManager{
     }
 
     @Override
-    public Invoker 666666666666666666666666666666666666666666666666666assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
         Invoker selectedInvoker = new Invoker();
         selectedInvoker.setAvailableRam(0);
         for (int i = 0; i < functions.size(); i += groupSize) {

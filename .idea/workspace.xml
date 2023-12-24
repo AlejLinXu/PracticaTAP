@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="RR no estoy seguro de si es asi" />
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="RR no estoy seguro de si es asi">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaTAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticaTAP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BigGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigGroupStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UniformGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UniformGroupStrategy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,9 +62,9 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/josep/Desktop/URV/3r/TAP/PracticaTAP&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/josep/OneDrive/Escritorio/PracticaTAP/PracticaTAP&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ajxzo/IdeaProjects/PracticaTAP/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -129,7 +135,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-93b19daf" />
+        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
       </set>
     </attachedChunks>
   </component>
