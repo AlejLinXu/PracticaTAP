@@ -9,11 +9,23 @@ public class BigGroupStrategy implements IPolicyManager{
     }
 
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
-        List<Invoker> freeInvokers = invokers.stream().filter(invoker -> invoker.getAvailableRam() >= 0).toList();
-        if (freeInvokers.isEmpty()) {
-            return null;
+    public Invoker 666666666666666666666666666666666666666666666666666assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
+        Invoker selectedInvoker = new Invoker();
+        selectedInvoker.setAvailableRam(0);
+        for (int i = 0; i < functions.size(); i += groupSize) {
+            int end = Math.min(i + groupSize, functions.size());
+            List<FunctionWithRam> group = functions.subList(i, end);
+
+            // Agregar el grupo al primer invocador disponible
+            for (Invoker invoker : invokers) {
+                if (invoker.getAvailableRam() >= group.stream().mapToInt(FunctionWithRam::getRam).sum()) {
+                    invoker.addFunction(group.get(0));
+                    selectedInvoker = invoker;
+                }
+            }
+
         }
-        return freeInvokers.get(0);
-    }
+        return selectedInvoker;
+
+}
 }

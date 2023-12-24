@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="RR no estoy seguro de si es asi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GreadyGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GreadyGroupStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="RR no estoy seguro de si es asi" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +39,9 @@
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JUnit.GreadyGroupStrategyTest.testAssignFunction.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StrategyTest.GreadyGroupTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.testBigGroupStrategy.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StrategyTest.testRoundRobinStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.testUniformGroupStrategy.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Tests.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Tests.testGReadyGroupStrategy.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Tests.testGreadyGroupStrategy.executor&quot;: &quot;Run&quot;,
@@ -68,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StrategyTest.GreadyGroupTest">
+  <component name="RunManager" selected="JUnit.StrategyTest.testBigGroupStrategy">
     <configuration name="StrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PracticaTAP" />
       <option name="PACKAGE_NAME" value="" />
@@ -83,6 +81,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="StrategyTest" />
       <option name="METHOD_NAME" value="GreadyGroupTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StrategyTest.testBigGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PracticaTAP" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StrategyTest" />
+      <option name="METHOD_NAME" value="testBigGroupStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,23 +116,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests.testGreadyGroupStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PracticaTAP" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="tests" />
-      <option name="METHOD_NAME" value="testGreadyGroupStrategy" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StrategyTest.GreadyGroupTest" />
+        <item itemvalue="JUnit.StrategyTest.testBigGroupStrategy" />
         <item itemvalue="JUnit.StrategyTest.testRoundRobinStrategy" />
+        <item itemvalue="JUnit.StrategyTest.GreadyGroupTest" />
         <item itemvalue="JUnit.StrategyTest.testUniformGroupStrategy" />
         <item itemvalue="JUnit.StrategyTest" />
-        <item itemvalue="JUnit.tests.testGreadyGroupStrategy" />
       </list>
     </recent_temporary>
   </component>

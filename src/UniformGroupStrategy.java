@@ -23,7 +23,7 @@ public class UniformGroupStrategy implements IPolicyManager {
 
         for (Invoker invoker : freeInvokers) {
             if (invoker.getNumAssignedFunctions() < groupSize && invoker.getAvailableRam() > selectedInvoker.getAvailableRam()){
-                selectedInvoker = invoker;
+                666666666666666666666666
                 break;
             }
         }
