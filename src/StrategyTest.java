@@ -12,31 +12,31 @@ public class StrategyTest {
         Invoker invoker1 = new Invoker();
         Invoker invoker2 = new Invoker();
         Invoker invoker3 = new Invoker();
-        invoker1.setAvailableRam(3);
-        invoker2.setAvailableRam(1);
-        invoker3.setAvailableRam(2);
+        invoker1.setAvailableRam(0);
+        invoker2.setAvailableRam(8);
+        invoker3.setAvailableRam(10);
         List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
 
         FunctionWithRam function1 = new FunctionWithRam(x -> x.get("x") - x.get("y"), 3);
         FunctionWithRam function2 = new FunctionWithRam(x -> x.get("z"), 2);
         FunctionWithRam function3 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
+        FunctionWithRam function4 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
+        FunctionWithRam function5 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
+        FunctionWithRam function6 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
+        FunctionWithRam function7 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
+        FunctionWithRam function8 = new FunctionWithRam(x -> x.get("x") + x.get("y") + x.get("z"), 1);
 
-        List<FunctionWithRam> functions = Arrays.asList(function1, function2, function3);
+
+        List<FunctionWithRam> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8);
 
         System.out.println("List of invokers "+invokers);
         System.out.println("List of functions "+functions);
 
         for (FunctionWithRam function: functions){
             Invoker selectedInvoker = greadyGroupStrategy.assignFunction(invokers, functions);
-            if (selectedInvoker == null) {
-                System.out.println("No invoker has enough available RAM for function: " + function);
-            }
-            else if (selectedInvoker.getAvailableRam() >= function.getRam()) {
-                selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - function.getRam());
-                selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
-                selectedInvoker.addFunction(function);
-            }
-            else System.out.println(selectedInvoker+"does not have enough available RAM for function: " + function);
+            selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - function.getRam());
+            selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
+            selectedInvoker.addFunction(function);
         }
         for (Invoker invoker: invokers){
             System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
