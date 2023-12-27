@@ -1,7 +1,5 @@
 import javax.xml.transform.Result;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -72,11 +70,13 @@ public class Controller<T, V> {
     }
 
 
-    public int getRam(Function function) {
+    public int getRam(String function) {
         return mapRam.get(function);
     }
 
-    public String getAction(Function function) {
-        return mapActions.get(function).toString();
+
+    public List getActions() {
+       //devuleve una lista con todas las acciones
+        return new ArrayList(mapActions.keySet());
     }
 }

@@ -3,7 +3,7 @@ import java.util.function.Function;
 
 public class RoundRobinStrategy implements IPolicyManager {
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<FunctionWithRam> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
         //Filtramos los invokers que tienen RAM disponible
         List<Invoker> freeInvokers = invokers.stream()
                 .filter(invoker -> invoker.getAvailableRam() > 0)

@@ -10,7 +10,7 @@ public class Invoker implements InvokerInterface {
     private int ram = 1024;
     private int availableRam = 1024;
     private int numAssignedFunctions = 0;
-    private List<FunctionWithRam> assignedFunctions = new ArrayList<>();
+    private List<Function> assignedFunctions = new ArrayList<>();
     public Invoker() {
     }
     @Override
@@ -45,11 +45,11 @@ public class Invoker implements InvokerInterface {
         this.numAssignedFunctions = numAssignedFunctions;
     }
 
-    public List<FunctionWithRam> getAssignedFunctions() {
+    public List<Function> getAssignedFunctions() {
         return assignedFunctions;
     }
 
-    public void addFunction(FunctionWithRam function) {
+    public void addFunction(Function function) {
         assignedFunctions.add(function);
     }
 }
