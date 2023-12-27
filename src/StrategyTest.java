@@ -173,9 +173,9 @@ public class StrategyTest {
         System.out.println("List of invokers " + invokers);
         System.out.println("List of functions: " + functions);
 
-        invoker1.setAvailableRam(24);
-        invoker2.setAvailableRam(10);
-        invoker3.setAvailableRam(10);
+        invoker1.setAvailableRam(20);
+        invoker2.setAvailableRam(12);
+        invoker3.setAvailableRam(12);
 
         for (FunctionWithRam function : functions) {
             Invoker selectedInvoker = bigGroupStrategy.assignFunction(invokers, functions);

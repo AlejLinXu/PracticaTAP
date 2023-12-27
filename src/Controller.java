@@ -70,4 +70,13 @@ public class Controller<T, V> {
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
+
+
+    public int getRam(Function function) {
+        return mapRam.get(function);
+    }
+
+    public String getAction(Function function) {
+        return mapActions.get(function).toString();
+    }
 }

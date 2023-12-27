@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="RR no estoy seguro de si es asi">
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Big Group casi va">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PracticaTAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticaTAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigGroupStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPolicyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPolicyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UniformGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UniformGroupStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +71,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StrategyTest.testBigGroupStrategy">
-    <configuration name="StrategyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.MainPolicyManager">
+    <configuration name="MainPolicyManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainPolicyManager" />
       <module name="PracticaTAP" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StrategyTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainPolicyManager" />
         <item itemvalue="JUnit.StrategyTest.testBigGroupStrategy" />
         <item itemvalue="JUnit.StrategyTest.testRoundRobinStrategy" />
         <item itemvalue="JUnit.StrategyTest.GreadyGroupTest" />
         <item itemvalue="JUnit.StrategyTest.testUniformGroupStrategy" />
-        <item itemvalue="JUnit.StrategyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703375313134</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Big Group casi va">
+      <option name="closed" value="true" />
+      <created>1703429321860</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703429321860</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -231,7 +236,8 @@
     <MESSAGE value="RoundRobinStrategy funciona" />
     <MESSAGE value="RoundRobinStrategy + GreadyGroupStrategy  con Ram en principio funcionan.&#10;&#10;UniformGroupStrategy creo que no va bien." />
     <MESSAGE value="RR no estoy seguro de si es asi" />
-    <option name="LAST_COMMIT_MESSAGE" value="RR no estoy seguro de si es asi" />
+    <MESSAGE value="Big Group casi va" />
+    <option name="LAST_COMMIT_MESSAGE" value="Big Group casi va" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
