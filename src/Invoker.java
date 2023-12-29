@@ -8,10 +8,11 @@ import java.util.concurrent.ExecutorService;
 public class Invoker implements InvokerInterface {
     ExecutorService executorService = Executors.newFixedThreadPool(10);
     private int ram = 1024;
-    private int availableRam = 1024;
+    private int availableRam;
     private int numAssignedFunctions = 0;
     private List<Function> assignedFunctions = new ArrayList<>();
-    public Invoker() {
+    public Invoker(int availableRam) {
+        this.availableRam = availableRam;
     }
     @Override
     public Object executeAction(Function<Object, Object> action, Object params) {

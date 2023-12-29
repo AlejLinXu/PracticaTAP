@@ -3,7 +3,7 @@ import java.util.concurrent.Future;
 import java.util.function.Function;
 
 public class MainFuture {
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         Controller<Integer, String> controller = new Controller<>();
         Function<Integer, String> sleep = s -> {
             try {
@@ -20,6 +20,6 @@ public class MainFuture {
         System.out.println(fut1.get());
         System.out.println(fut2.get());
         System.out.println(fut3.get());
-    }
+    }*/
 
 }

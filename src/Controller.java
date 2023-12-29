@@ -11,28 +11,32 @@ public class Controller<T, V> {
     private HashMap<String, Integer> mapRam;
     private IPolicyManager policy;
 
-    public Controller (IPolicyManager policy) {
+    public Controller (int numInvokers, int invokerRam, IPolicyManager policy) {
         listInvokers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            this.listInvokers.add(i, new Invoker());
+        for (int i = 0; i < numInvokers; i++) {
+            this.listInvokers.add(i, new Invoker(invokerRam));
         }
         this.mapActions = new HashMap<>();
         this.mapRam = new HashMap<String, Integer>(4, 4);
         this.policy = policy;
     }
 
-    public Controller() {
-        listInvokers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            this.listInvokers.add(i, new Invoker());
-        }
-        this.mapActions = new HashMap<>();
-        this.mapRam = new HashMap<String, Integer>(4, 4);
-    }
+//    public Controller() {
+//        listInvokers = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            this.listInvokers.add(i, new Invoker());
+//        }
+//        this.mapActions = new HashMap<>();
+//        this.mapRam = new HashMap<String, Integer>(4, 4);
+//    }
 
     public void registerAction(String action, Function<T, V> f, int ram) {
         this.mapActions.put(action, f);
         this.mapRam.put(action, ram);
+    }
+
+    public List<Invoker> getListInvokers() {
+        return listInvokers;
     }
 
     public Object invoke(String actionName, Map<String, Integer> params) {

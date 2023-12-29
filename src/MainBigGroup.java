@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class MainRoundRobin {
+public class MainBigGroup {
     public static void main(String[] args) {
-        System.out.println("ROUND ROBIN STRATEGY TEST");
-        RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy();
-        Controller controller = new Controller(12,800,roundRobinStrategy);
+        System.out.println("GREEDY GROUP STRATEGY TEST");
+        BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(5);
+        Controller controller = new Controller(10,55, bigGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -21,8 +21,9 @@ public class MainRoundRobin {
         Function<Map<String, Integer>, Integer> function10 = x -> x.get("x") % x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function11 = x -> x.get("x") + x.get("y") % x.get("z");
         Function<Map<String, Integer>, Integer> function12 = x -> x.get("x") % x.get("y") * x.get("z");
+        Function<Map<String, Integer>, Integer> function13 = x -> x.get("x") % x.get("y") * x.get("z");
 
-        List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
+        List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12, function13);
 
         controller.registerAction("addAction1", function1, 3);
         controller.registerAction("addAction2", function2, 2);
@@ -36,15 +37,18 @@ public class MainRoundRobin {
         controller.registerAction("addAction10", function10, 2);
         controller.registerAction("addAction11", function11, 2);
         controller.registerAction("addAction12", function12, 2);
+        controller.registerAction("addAction13", function13, 2);
+
+        List actions = controller.getActions();
 
         List<Invoker> invokers = controller.getListInvokers();
 
         System.out.println("List of invokers " + invokers);
         System.out.println("List of functions " + functions);
-        List actions = controller.getActions();
+
         System.out.println("List of actions " + actions);
         for(Object action : actions) {
-            Invoker selectedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = bigGroupStrategy.assignFunction(invokers, functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) action));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(functions.get(actions.indexOf(action)));

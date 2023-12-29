@@ -19,11 +19,12 @@ public class UniformGroupStrategy implements IPolicyManager {
             return null;
         }
 
-        Invoker selectedInvoker = new Invoker();
+        Invoker selectedInvoker = new Invoker(invokers.get(0).getAvailableRam());
         selectedInvoker.setAvailableRam(0);
 
         for (Invoker invoker : freeInvokers) {
             if (invoker.getNumAssignedFunctions() < groupSize && invoker.getAvailableRam() > selectedInvoker.getAvailableRam()){
+                selectedInvoker = invoker;
                 break;
             }
         }

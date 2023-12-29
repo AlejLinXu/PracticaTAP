@@ -10,7 +10,7 @@ public class BigGroupStrategy implements IPolicyManager{
 
     @Override
     public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
-        Invoker selectedInvoker = new Invoker();
+        Invoker selectedInvoker = new Invoker(invokers.get(0).getAvailableRam());
         selectedInvoker.setAvailableRam(0);
         for (int i = 0; i < functions.size(); i += groupSize) {
             int end = Math.min(i + groupSize, functions.size());
@@ -21,11 +21,12 @@ public class BigGroupStrategy implements IPolicyManager{
                 if (invoker.getAvailableRam() >= 0) {
                     invoker.addFunction(group.get(0));
                     selectedInvoker = invoker;
+                    break;
                 }
             }
 
         }
         return selectedInvoker;
 
-}
+    }
 }

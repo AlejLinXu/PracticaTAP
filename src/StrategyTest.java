@@ -8,17 +8,9 @@ public class StrategyTest {
 
     @Test
     public void GreadyGroupTest() {
-        System.out.println("GREADY GROUP STRATEGY TEST");
-        Controller controller = new Controller(new GreadyGroupStrategy());
-        GreadyGroupStrategy greadyGroupStrategy = new GreadyGroupStrategy();
-
-        Invoker invoker1 = new Invoker();
-        Invoker invoker2 = new Invoker();
-        Invoker invoker3 = new Invoker();
-        invoker1.setAvailableRam(2);
-        invoker2.setAvailableRam(8);
-        invoker3.setAvailableRam(10);
-        List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
+        System.out.println("GREEDY GROUP STRATEGY TEST");
+        Controller controller = new Controller(7, 1000,new GreedyGroupStrategy());
+        GreedyGroupStrategy greedyGroupStrategy = new GreedyGroupStrategy();
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -49,35 +41,31 @@ public class StrategyTest {
         controller.registerAction("addAction11", function11, 2);
         controller.registerAction("addAction12", function12, 2);
 
-        System.out.println("List of invokers " + invokers);
         System.out.println("List of functions " + functions);
+
+        List<Invoker> ListInvokers = controller.getListInvokers();
+
         List actions = controller.getActions();
         for (Function function : functions) {
 
-            Invoker selectedInvoker = greadyGroupStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = greedyGroupStrategy.assignFunction(controller.getListInvokers(), functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) actions.get(0)));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(function);
         }
-        for (Invoker invoker : invokers) {
-            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
+        int i=1;
+        for (Invoker invoker : ListInvokers) {
+            System.out.println("Invoker "+i + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
             invoker.getAssignedFunctions().forEach(System.out::println);
+            i++;
         }
     }
 
     @Test
     public void testRoundRobinStrategy(){
         System.out.println("ROUND ROBIN STRATEGY TEST");
-        Controller controller = new Controller(new RoundRobinStrategy());
+        Controller controller = new Controller(8, 1024, new RoundRobinStrategy());
         RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy();
-
-        Invoker invoker1 = new Invoker();
-        Invoker invoker2 = new Invoker();
-        Invoker invoker3 = new Invoker();
-        invoker1.setAvailableRam(8);
-        invoker2.setAvailableRam(8);
-        invoker3.setAvailableRam(10);
-        List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -95,48 +83,36 @@ public class StrategyTest {
 
         List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
 
+        List<Invoker> ListInvokers = controller.getListInvokers();
+
         controller.registerAction("addAction1", function1, 3);
         controller.registerAction("addAction2", function2, 2);
-        controller.registerAction("addAction3", function3, 2);
-        controller.registerAction("addAction4", function4, 2);
-        controller.registerAction("addAction5", function5, 2);
-        controller.registerAction("addAction6", function6, 2);
-        controller.registerAction("addAction7", function7, 2);
-        controller.registerAction("addAction8", function8, 2);
-        controller.registerAction("addAction9", function9, 2);
-        controller.registerAction("addAction10", function10, 2);
-        controller.registerAction("addAction11", function11, 2);
-        controller.registerAction("addAction12", function12, 2);
 
-        System.out.println("List of invokers " + invokers);
+
+        System.out.println("List of invokers " + ListInvokers);
         System.out.println("List of functions " + functions);
         List actions = controller.getActions();
         for (Function function : functions) {
 
-            Invoker selectedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = roundRobinStrategy.assignFunction(ListInvokers, functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) actions.get(0)));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(function);
         }
-        for (Invoker invoker : invokers) {
-            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
+        int i=1;
+        for (Invoker invoker : ListInvokers) {
+            System.out.println("Invoker "+i + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
             invoker.getAssignedFunctions().forEach(System.out::println);
+            i++;
         }
     }
 
     @Test
     public void testUniformGroupStrategy() {
         System.out.println("UNIFORM GROUP STRATEGY TEST");
-        Controller controller = new Controller(new UniformGroupStrategy(4));
-        UniformGroupStrategy uniformGroupStrategy = new UniformGroupStrategy(4);
+        UniformGroupStrategy uniformGroupStrategy = new UniformGroupStrategy(2);
+        Controller controller = new Controller(12, 1024,uniformGroupStrategy);
 
-        Invoker invoker1 = new Invoker();
-        Invoker invoker2 = new Invoker();
-        Invoker invoker3 = new Invoker();
-        invoker1.setAvailableRam(8);
-        invoker2.setAvailableRam(8);
-        invoker3.setAvailableRam(10);
-        List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -167,35 +143,30 @@ public class StrategyTest {
         controller.registerAction("addAction11", function11, 2);
         controller.registerAction("addAction12", function12, 2);
 
-        System.out.println("List of invokers " + invokers);
+        List<Invoker> ListInvokers = controller.getListInvokers();
+
+        System.out.println("List of invokers " + ListInvokers);
         System.out.println("List of functions " + functions);
         List actions = controller.getActions();
         for (Function function : functions) {
-
-            Invoker selectedInvoker = uniformGroupStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = uniformGroupStrategy.assignFunction(ListInvokers, functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) actions.get(0)));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(function);
         }
-        for (Invoker invoker : invokers) {
-            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
+        int i=1;
+        for (Invoker invoker : ListInvokers) {
+            System.out.println("Invoker "+i + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
             invoker.getAssignedFunctions().forEach(System.out::println);
+            i++;
         }
     }
 
     @Test
     public void testBigGroupStrategy() {
         System.out.println("BIG GROUP STRATEGY TEST");
-        Controller controller = new Controller(new BigGroupStrategy(6));
+        Controller controller = new Controller(7, 1024,new BigGroupStrategy(6));
         BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(6);
-
-        Invoker invoker1 = new Invoker();
-        Invoker invoker2 = new Invoker();
-        Invoker invoker3 = new Invoker();
-        invoker1.setAvailableRam(2);
-        invoker2.setAvailableRam(8);
-        invoker3.setAvailableRam(10);
-        List<Invoker> invokers = Arrays.asList(invoker1, invoker2, invoker3);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -226,19 +197,23 @@ public class StrategyTest {
         controller.registerAction("addAction11", function11, 2);
         controller.registerAction("addAction12", function12, 2);
 
-        System.out.println("List of invokers " + invokers);
+        List<Invoker> ListInvokers = controller.getListInvokers();
+
+        System.out.println("List of invokers " + ListInvokers);
         System.out.println("List of functions " + functions);
         List actions = controller.getActions();
         for (Function function : functions) {
 
-            Invoker selectedInvoker = bigGroupStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = bigGroupStrategy.assignFunction(ListInvokers, functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) actions.get(0)));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(function);
         }
-        for (Invoker invoker : invokers) {
-            System.out.println(invoker + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
+        int i=1;
+        for (Invoker invoker : ListInvokers) {
+            System.out.println("Invoker "+i + ": " + invoker.getNumAssignedFunctions() + " functions " + "and available RAM: " + invoker.getAvailableRam());
             invoker.getAssignedFunctions().forEach(System.out::println);
+            i++;
         }
     }
 }

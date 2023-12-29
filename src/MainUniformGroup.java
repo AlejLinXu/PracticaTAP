@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class MainRoundRobin {
+public class MainUniformGroup {
     public static void main(String[] args) {
-        System.out.println("ROUND ROBIN STRATEGY TEST");
-        RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy();
-        Controller controller = new Controller(12,800,roundRobinStrategy);
+        System.out.println("UNIFORM GROUP STRATEGY TEST");
+        UniformGroupStrategy uniformGroupStrategy = new UniformGroupStrategy(5);
+        Controller controller = new Controller(12,800, uniformGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -37,6 +37,7 @@ public class MainRoundRobin {
         controller.registerAction("addAction11", function11, 2);
         controller.registerAction("addAction12", function12, 2);
 
+
         List<Invoker> invokers = controller.getListInvokers();
 
         System.out.println("List of invokers " + invokers);
@@ -44,7 +45,7 @@ public class MainRoundRobin {
         List actions = controller.getActions();
         System.out.println("List of actions " + actions);
         for(Object action : actions) {
-            Invoker selectedInvoker = roundRobinStrategy.assignFunction(invokers, functions);
+            Invoker selectedInvoker = uniformGroupStrategy.assignFunction(invokers, functions);
             selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) action));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(functions.get(actions.indexOf(action)));

@@ -8,7 +8,7 @@ import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Controller<Map<String, Integer>, Integer> controller = new Controller<>();
+        /*Controller<Map<String, Integer>, Integer> controller = new Controller<>();
         Function<Map<String, Integer>, Integer> f = x -> x.get("x") - x.get("y");
         controller.registerAction("addAction", f, 3);
         int res = (int) controller.invoke("addAction", Map.of("x", 6, "y", 2));
@@ -27,7 +27,7 @@ public class Main {
         });
 
         Future future = controller.invokeAsync("addAction", Map.of("x", 6, "y", 2));
-        System.out.println(future.get());
+        System.out.println(future.get());*/
     }
 }
 
