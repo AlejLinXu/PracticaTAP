@@ -7,7 +7,7 @@ public class MainUniformGroup {
     public static void main(String[] args) {
         System.out.println("UNIFORM GROUP STRATEGY TEST");
         UniformGroupStrategy uniformGroupStrategy = new UniformGroupStrategy(1);
-        Controller controller = new Controller(12,800, uniformGroupStrategy);
+        Controller<Map<String, Integer>, Integer> controller = new Controller<>(12,2, uniformGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -22,7 +22,7 @@ public class MainUniformGroup {
         Function<Map<String, Integer>, Integer> function11 = x -> x.get("x") + x.get("y") % x.get("z");
         Function<Map<String, Integer>, Integer> function12 = x -> x.get("x") % x.get("y") * x.get("z");
 
-        List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
+        List<Function<Map<String, Integer>, Integer>> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12);
 
         controller.registerAction("addAction1", function1, 1);
         controller.registerAction("addAction2", function2, 1);
@@ -42,14 +42,15 @@ public class MainUniformGroup {
 
         System.out.println("List of invokers " + invokers);
         System.out.println("List of functions " + functions);
-        List actions = controller.getActions();
+        List<String> actions = controller.getActions();
         System.out.println("List of actions " + actions);
-        for(Object action : actions) {
+        for(String action : actions) {
+            System.out.print(action+ " = ");
             Invoker selectedInvoker = uniformGroupStrategy.assignFunction(invokers, functions);
-            selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) action));
+            selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam(action));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(functions.get(actions.indexOf(action)));
-            int itemList = (int) controller.invoke((String) action, Map.of("x", 5, "y", 1, "z", 7));
+            int itemList = (int) controller.invoke(action, Map.of("x", 5, "y", 1, "z", 7));
             System.out.println(itemList);
         }
         int i=1;

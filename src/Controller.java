@@ -1,15 +1,11 @@
-import javax.xml.transform.Result;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.function.Function;
 
 public class Controller<T, V> {
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
-    private HashMap<String, Integer> mapRam;
-    private IPolicyManager policy;
+    private final HashMap<String, Integer> mapRam;
+    private final IPolicyManager policy;
 
     public Controller (int numInvokers, int invokerRam, IPolicyManager policy) {
         listInvokers = new ArrayList<>();
@@ -17,7 +13,7 @@ public class Controller<T, V> {
             this.listInvokers.add(i, new Invoker(invokerRam));
         }
         this.mapActions = new HashMap<>();
-        this.mapRam = new HashMap<String, Integer>(4, 4);
+        this.mapRam = new HashMap<>(4, 4);
         this.policy = policy;
     }
 
@@ -51,7 +47,7 @@ public class Controller<T, V> {
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
 
-    public Future<Object> invokeAsync(String actionName, Map<String, Integer> params) {
+    /*public Future<Object> invokeAsync(String actionName, Map<String, Integer> params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
         if (action != null) {
             if (listInvokers.get(0).getAvailableRam() > mapRam.get(actionName)) {
@@ -70,7 +66,7 @@ public class Controller<T, V> {
             return listInvokers.get(0).executeActionAsync(action, params);
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
-    }
+    }*/
 
 
     public int getRam(String function) {
@@ -78,8 +74,10 @@ public class Controller<T, V> {
     }
 
 
-    public List getActions() {
+    public List<String> getActions() {
        //devuleve una lista con todas las acciones
-        return new ArrayList(mapActions.keySet());
+        List<String> actions = new ArrayList<>(mapActions.keySet());
+        actions.sort(String::compareTo);
+        return actions;
     }
 }

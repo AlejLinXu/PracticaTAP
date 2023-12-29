@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 public class UniformGroupStrategy implements IPolicyManager {
@@ -10,7 +11,7 @@ public class UniformGroupStrategy implements IPolicyManager {
     }
 
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<Function<Map<String, Integer>, Integer>> functions) {
         List<Invoker> freeInvokers = invokers.stream()
                 .filter(invoker -> invoker.getAvailableRam() > 0)
                 .toList();
@@ -19,13 +20,11 @@ public class UniformGroupStrategy implements IPolicyManager {
             return null;
         }
 
-        Invoker selectedInvoker = new Invoker(invokers.get(0).getAvailableRam());
-        selectedInvoker.setAvailableRam(0);
+        Invoker selectedInvoker = new Invoker(-1);
 
         for (Invoker invoker : freeInvokers) {
             if (invoker.getNumAssignedFunctions() < groupSize && invoker.getAvailableRam() > selectedInvoker.getAvailableRam()){
                 selectedInvoker = invoker;
-                break;
             }
         }
         return selectedInvoker;

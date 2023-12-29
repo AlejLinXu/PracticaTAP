@@ -1,10 +1,11 @@
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 public class GreedyGroupStrategy implements IPolicyManager {
 //Asigna la función al invoker con más RAM disponible.
     @Override
-    public Invoker assignFunction(List<Invoker> invokers, List<Function> functions) {
+    public Invoker assignFunction(List<Invoker> invokers, List<Function<Map<String, Integer>, Integer>> functions) {
         //Si no hay invokers disponibles o no hay funciones, devolvemos null
         if (invokers.isEmpty() || functions.isEmpty()) {
             return null;

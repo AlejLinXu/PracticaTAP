@@ -7,7 +7,7 @@ public class MainBigGroup {
     public static void main(String[] args) {
         System.out.println("BIG GROUP STRATEGY TEST");
         BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(5);
-        Controller controller = new Controller(10,55, bigGroupStrategy);
+        Controller<Map<String, Integer>, Integer> controller = new Controller<>(10,55, bigGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -23,7 +23,7 @@ public class MainBigGroup {
         Function<Map<String, Integer>, Integer> function12 = x -> x.get("x") % x.get("y") * x.get("z");
         Function<Map<String, Integer>, Integer> function13 = x -> x.get("x") % x.get("y") * x.get("z");
 
-        List<Function> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12, function13);
+        List<Function<Map<String, Integer>, Integer>> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12, function13);
 
         controller.registerAction("addAction1", function1, 3);
         controller.registerAction("addAction2", function2, 2);
@@ -39,7 +39,7 @@ public class MainBigGroup {
         controller.registerAction("addAction12", function12, 2);
         controller.registerAction("addAction13", function13, 2);
 
-        List actions = controller.getActions();
+        List<String> actions = controller.getActions();
 
         List<Invoker> invokers = controller.getListInvokers();
 
@@ -47,12 +47,13 @@ public class MainBigGroup {
         System.out.println("List of functions " + functions);
 
         System.out.println("List of actions " + actions);
-        for(Object action : actions) {
+        for(String action : actions) {
+            System.out.print(action+ " = ");
             Invoker selectedInvoker = bigGroupStrategy.assignFunction(invokers, functions);
-            selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam((String) action));
+            selectedInvoker.setAvailableRam(selectedInvoker.getAvailableRam() - controller.getRam(action));
             selectedInvoker.setNumAssignedFunctions(selectedInvoker.getNumAssignedFunctions() + 1);
             selectedInvoker.addFunction(functions.get(actions.indexOf(action)));
-            int itemList = (int) controller.invoke((String) action, Map.of("x", 5, "y", 1, "z", 7));
+            int itemList = (int) controller.invoke(action, Map.of("x", 5, "y", 1, "z", 7));
             System.out.println(itemList);
         }
         int i=1;
