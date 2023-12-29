@@ -42,10 +42,9 @@ public class Controller<T, V> {
     public Object invoke(String actionName, Map<String, Integer> params) {
         Function<Object, Object> action = (Function<Object, Object>) mapActions.get(actionName);
         if (action != null){
-            if(listInvokers.get(0).getAvailableRam() > mapRam.get(actionName)){
-                listInvokers.get(0).setRam(mapRam.get(actionName));
+            if(listInvokers.get(0).getAvailableRam() < mapRam.get(actionName)){
+                throw new IllegalArgumentException("Not enough RAM");
             }
-            else throw new IllegalArgumentException("Not enough RAM");
 
             return listInvokers.get(0).executeAction(action, params);
         }

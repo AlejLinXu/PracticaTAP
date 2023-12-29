@@ -7,7 +7,7 @@ public class MainRoundRobin {
     public static void main(String[] args) {
         System.out.println("ROUND ROBIN STRATEGY TEST");
         RoundRobinStrategy roundRobinStrategy = new RoundRobinStrategy();
-        Controller controller = new Controller(12,800,roundRobinStrategy);
+        Controller controller = new Controller(4,800,roundRobinStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");

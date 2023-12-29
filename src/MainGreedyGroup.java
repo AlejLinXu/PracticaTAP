@@ -7,7 +7,7 @@ public class MainGreedyGroup {
     public static void main(String[] args) {
         System.out.println("GREEDY GROUP STRATEGY TEST");
         GreedyGroupStrategy greedyGroupStrategy = new GreedyGroupStrategy();
-        Controller controller = new Controller(5,55, greedyGroupStrategy);
+        Controller controller = new Controller(5,30, greedyGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");

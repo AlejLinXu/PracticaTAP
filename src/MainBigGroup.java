@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class MainBigGroup {
     public static void main(String[] args) {
-        System.out.println("GREEDY GROUP STRATEGY TEST");
+        System.out.println("BIG GROUP STRATEGY TEST");
         BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(5);
         Controller controller = new Controller(10,55, bigGroupStrategy);
 

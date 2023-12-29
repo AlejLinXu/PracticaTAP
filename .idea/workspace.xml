@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Añadidos getRam y getAction en Controller, asi no haria falta la classe extra ya que sacamos la RAM con eso. Faltan completar los mains.">
-      <change afterPath="$PROJECT_DIR$/src/MainBigGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainGreedyGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainUniformGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BigGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BigGroupStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GreadyGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GreedyGroupStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IPolicyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPolicyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFuture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainBigGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBigGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainGreedyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGreedyGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainRoundRobin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainRoundRobin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RoundRobinStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoundRobinStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UniformGroupStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UniformGroupStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainUniformGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainUniformGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,44 +38,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainFuture.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainPolicyManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainRoundRobin.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.GreadyGroupStrategyTest.testAssignFunction.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.GreadyGroupTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.testBigGroupStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.testRoundRobinStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StrategyTest.testUniformGroupStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Tests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Tests.testGReadyGroupStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Tests.testGreadyGroupStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Tests.testRoundRobinStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Tests.testUniformGroupStrategy.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/josep/OneDrive/Escritorio/PracticaTAP/PracticaTAP&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ajxzo/IdeaProjects/PracticaTAP/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MainBigGroup.executor": "Run",
+    "Application.MainFuture.executor": "Run",
+    "Application.MainGreedyGroup.executor": "Run",
+    "Application.MainPolicyManager.executor": "Run",
+    "Application.MainRoundRobin.executor": "Run",
+    "Application.MainUniformGroup.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.GreadyGroupStrategyTest.testAssignFunction.executor": "Run",
+    "JUnit.StrategyTest.GreadyGroupTest.executor": "Run",
+    "JUnit.StrategyTest.executor": "Run",
+    "JUnit.StrategyTest.testBigGroupStrategy.executor": "Run",
+    "JUnit.StrategyTest.testRoundRobinStrategy.executor": "Run",
+    "JUnit.StrategyTest.testUniformGroupStrategy.executor": "Run",
+    "JUnit.Tests.executor": "Run",
+    "JUnit.Tests.testGReadyGroupStrategy.executor": "Run",
+    "JUnit.Tests.testGreadyGroupStrategy.executor": "Run",
+    "JUnit.Tests.testRoundRobinStrategy.executor": "Run",
+    "JUnit.Tests.testUniformGroupStrategy.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/josep/OneDrive/Escritorio/PracticaTAP/PracticaTAP",
+    "onboarding.tips.debug.path": "C:/Users/ajxzo/IdeaProjects/PracticaTAP/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainGreedyGroup">
+  <component name="RunManager" selected="Application.MainRoundRobin">
     <configuration name="MainBigGroup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainBigGroup" />
       <module name="PracticaTAP" />
@@ -126,10 +119,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainGreedyGroup" />
-        <item itemvalue="Application.MainBigGroup" />
-        <item itemvalue="Application.MainUniformGroup" />
         <item itemvalue="Application.MainRoundRobin" />
+        <item itemvalue="Application.MainGreedyGroup" />
+        <item itemvalue="Application.MainUniformGroup" />
+        <item itemvalue="Application.MainBigGroup" />
         <item itemvalue="JUnit.StrategyTest.testRoundRobinStrategy" />
       </list>
     </recent_temporary>
@@ -263,6 +256,16 @@
     <MESSAGE value="Big Group casi va" />
     <MESSAGE value="Añadidos getRam y getAction en Controller, asi no haria falta la classe extra ya que sacamos la RAM con eso. Faltan completar los mains." />
     <option name="LAST_COMMIT_MESSAGE" value="Añadidos getRam y getAction en Controller, asi no haria falta la classe extra ya que sacamos la RAM con eso. Faltan completar los mains." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
