@@ -7,7 +7,7 @@ public class MainBigGroup {
     public static void main(String[] args) {
         System.out.println("BIG GROUP STRATEGY TEST");
         BigGroupStrategy bigGroupStrategy = new BigGroupStrategy(5);
-        Controller<Map<String, Integer>, Integer> controller = new Controller<>(10,55, bigGroupStrategy);
+        Controller<Map<String, Integer>, Integer> controller = new Controller<>(10,20, bigGroupStrategy);
 
         Function<Map<String, Integer>, Integer> function1 = x -> x.get("x") + x.get("y") + x.get("z");
         Function<Map<String, Integer>, Integer> function2 = x -> x.get("x") - x.get("y") - x.get("z");
@@ -25,7 +25,7 @@ public class MainBigGroup {
 
         List<Function<Map<String, Integer>, Integer>> functions = Arrays.asList(function1, function2, function3, function4, function5, function6, function7, function8, function9, function10, function11, function12, function13);
 
-        controller.registerAction("addAction1", function1, 3);
+        controller.registerAction("addAction1", function1, 2);
         controller.registerAction("addAction2", function2, 2);
         controller.registerAction("addAction3", function3, 2);
         controller.registerAction("addAction4", function4, 2);
