@@ -1,11 +1,13 @@
 import java.util.*;
 import java.util.function.Function;
 
-public class Controller<T, V> {
+public class Controller<T, V> implements MetricsObserver{
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
     private final HashMap<String, Integer> mapRam;
     private final IPolicyManager policy;
+    private final List<MetricsObserver> metricsObservers;
+    private final List<Metric> metricList;
 
     public Controller (int numInvokers, int invokerRam, IPolicyManager policy) {
         listInvokers = new ArrayList<>();
@@ -15,6 +17,8 @@ public class Controller<T, V> {
         this.mapActions = new HashMap<>();
         this.mapRam = new HashMap<>(4, 4);
         this.policy = policy;
+        this.metricsObservers = new ArrayList<>();
+        this.metricList = new ArrayList<>();
     }
 
 //    public Controller() {
@@ -41,6 +45,11 @@ public class Controller<T, V> {
             if(listInvokers.get(0).getAvailableRam() < mapRam.get(actionName)){
                 throw new IllegalArgumentException("Not enough RAM");
             }
+
+            long executionTime = System.currentTimeMillis();
+            int usedMemory = mapRam.get(actionName);
+
+            updateMetrics(actionName, executionTime, usedMemory);
 
             return listInvokers.get(0).executeAction(action, params);
         }
@@ -79,5 +88,21 @@ public class Controller<T, V> {
         List<String> actions = new ArrayList<>(mapActions.keySet());
         actions.sort(String::compareTo);
         return actions;
+    }
+
+    public void notifyMetrics(String action, long executionTime, int usedMemory) {
+        for (MetricsObserver observer : metricsObservers) {
+            observer.updateMetrics(action, executionTime, usedMemory);
+        }
+    }
+
+    public List<Metric> getMetrics(){
+        return metricList;
+    }
+
+    @Override
+    public void updateMetrics(String action, long executionTime, int usedMemory) {
+        metricList.add(new Metric(action, executionTime, usedMemory));
+        notifyMetrics(action, executionTime, usedMemory);
     }
 }

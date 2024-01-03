@@ -53,4 +53,5 @@ public class Invoker implements InvokerInterface {
     public void addFunction(Function function) {
         assignedFunctions.add(function);
     }
+
 }

@@ -58,5 +58,10 @@ public class MainRoundRobin {
             invoker.getAssignedFunctions().forEach(System.out::println);
             i++;
         }
+
+        List<Metric> metrics = controller.getMetrics();
+        for (Metric metric : metrics) {
+            System.out.println("Action: " + metric.getAction() + ", Execution Time: " + metric.getExecutionTime() + " ms, Used Memory: " + metric.getUsedMemory() + " MB");
+        }
     }
 }
