@@ -11,6 +11,9 @@ public class Invoker implements InvokerInterface {
     private int availableRam;
     private int numAssignedFunctions = 0;
     private List<Function> assignedFunctions = new ArrayList<>();
+
+    private boolean cacheEnabled = false; //cache for decorator
+    private boolean timerOn = false; //timer for decorator
     public Invoker(int availableRam) {
         this.availableRam = availableRam;
     }
@@ -22,7 +25,26 @@ public class Invoker implements InvokerInterface {
     public Future<Object> executeActionAsync(Function<Object, Object> action, Object params) {
         return executorService.submit(() -> action.apply(params));
     }
+
+
     //getters y setters RAM
+
+
+    public boolean isCacheEnabled() {
+        return cacheEnabled;
+    }
+
+    public void setCacheEnabled(boolean cacheEnabled) {
+        this.cacheEnabled = cacheEnabled;
+    }
+
+    public boolean isTimerOn() {
+        return timerOn;
+    }
+
+    public void setTimerOn(boolean timerOn) {
+        this.timerOn = timerOn;
+    }
     public int getRam() {
         return ram;
     }

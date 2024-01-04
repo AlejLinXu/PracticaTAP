@@ -30,5 +30,3 @@ public class Main {
         System.out.println(future.get());*/
     }
 }
-
-
