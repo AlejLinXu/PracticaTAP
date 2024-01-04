@@ -105,4 +105,33 @@ public class Controller<T, V> implements MetricsObserver{
         metricList.add(new Metric(action, executionTime, usedMemory));
         notifyMetrics(action, executionTime, usedMemory);
     }
+
+    //methods to get max, min and average execution time
+    public long getMaxExecutionTime(){
+        long max = 0;
+        for (Metric metric : metricList) {
+            if (metric.getExecutionTime() > max) {
+                max = metric.getExecutionTime();
+            }
+        }
+        return max;
+    }
+
+    public long getMinExecutionTime(){
+        long min = metricList.get(0).getExecutionTime();
+        for (Metric metric : metricList) {
+            if (metric.getExecutionTime() < min) {
+                min = metric.getExecutionTime();
+            }
+        }
+        return min;
+    }
+
+    public long getAverageExecutionTime(){
+        long sum = 0;
+        for (Metric metric : metricList) {
+            sum += metric.getExecutionTime();
+        }
+        return sum/metricList.size();
+    }
 }
