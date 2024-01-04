@@ -62,10 +62,9 @@ public class MainRoundRobin {
 
         List<Metric> metrics = controller.getMetrics();
         for (Metric metric : metrics) {
-            System.out.println("Action: " + metric.getAction() + ", Execution Time: " + metric.getExecutionTime() + " s, Used Memory: " + metric.getUsedMemory() + " MB");
+            System.out.println("Action: " + metric.getAction() + ", Execution Time: " + metric.getExecutionTime() + " ms, Used Memory: " + metric.getUsedMemory() + " MB");
         }
-
-        System.out.println("Average Execution Time: " + controller.getAverageExecutionTime() + " s, Max Execution Time: " + controller.getMaxExecutionTime() + " s, Min Execution Time: " + controller.getMinExecutionTime() + " s");
+        System.out.println("Average Execution Time: " + controller.getAverageExecutionTime() + " ms, Max Execution Time: " + controller.getMaxExecutionTime() + " s, Min Execution Time: " + controller.getMinExecutionTime() + " s, Total Used Memory: " + controller.getTotalUsedMemory() + " MB");
 
     }
 }

@@ -1,3 +1,3 @@
 public interface MetricsObserver {
-    void updateMetrics(String action, long executionTime, int usedMemory);
+    void updateMetrics(String action, double executionTime, int usedMemory);
 }

@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Pequeños cambios">
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Cambios en el observer, ahora cuadra mas el tiempo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainBigGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainBigGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainGreedyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGreedyGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainRoundRobin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainRoundRobin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainUniformGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainUniformGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Metric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Metric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MetricsObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetricsObserver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +134,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
       </set>
     </attachedChunks>
   </component>
@@ -255,7 +260,8 @@
     <MESSAGE value="Big Group casi va" />
     <MESSAGE value="Añadidos getRam y getAction en Controller, asi no haria falta la classe extra ya que sacamos la RAM con eso. Faltan completar los mains." />
     <MESSAGE value="Pequeños cambios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pequeños cambios" />
+    <MESSAGE value="Cambios en el observer, ahora cuadra mas el tiempo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el observer, ahora cuadra mas el tiempo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

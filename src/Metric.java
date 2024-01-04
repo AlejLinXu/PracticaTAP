@@ -1,9 +1,9 @@
 public class Metric {
-    private String action;
-    private long executionTime;
-    private int usedMemory;
+    private final String action;
+    private final double executionTime;
+    private final int usedMemory;
 
-    public Metric(String action, long executionTime, int usedMemory) {
+    public Metric(String action, double executionTime, int usedMemory) {
         this.action = action;
         this.executionTime = executionTime;
         this.usedMemory = usedMemory;
@@ -13,7 +13,7 @@ public class Metric {
         return action;
     }
 
-    public long getExecutionTime() {
+    public double getExecutionTime() {
         return executionTime;
     }
 

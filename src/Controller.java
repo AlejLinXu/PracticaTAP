@@ -46,12 +46,18 @@ public class Controller<T, V> implements MetricsObserver{
                 throw new IllegalArgumentException("Not enough RAM");
             }
 
-            long executionTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
+
+            Object result = listInvokers.get(0).executeAction(action, params);
+
+            long endTime = System.nanoTime();
+            long executionTime = endTime - startTime;
+            double msExecution = (double) executionTime / 1000000.0;
             int usedMemory = mapRam.get(actionName);
 
-            updateMetrics(actionName, executionTime, usedMemory);
+            updateMetrics(actionName, msExecution, usedMemory);
 
-            return listInvokers.get(0).executeAction(action, params);
+            return result;
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
@@ -90,7 +96,7 @@ public class Controller<T, V> implements MetricsObserver{
         return actions;
     }
 
-    public void notifyMetrics(String action, long executionTime, int usedMemory) {
+    public void notifyMetrics(String action, double executionTime, int usedMemory) {
         for (MetricsObserver observer : metricsObservers) {
             observer.updateMetrics(action, executionTime, usedMemory);
         }
@@ -101,14 +107,14 @@ public class Controller<T, V> implements MetricsObserver{
     }
 
     @Override
-    public void updateMetrics(String action, long executionTime, int usedMemory) {
+    public void updateMetrics(String action, double executionTime, int usedMemory) {
         metricList.add(new Metric(action, executionTime, usedMemory));
         notifyMetrics(action, executionTime, usedMemory);
     }
 
     //methods to get max, min and average execution time
-    public long getMaxExecutionTime(){
-        long max = 0;
+    public double getMaxExecutionTime(){
+        double max = 0;
         for (Metric metric : metricList) {
             if (metric.getExecutionTime() > max) {
                 max = metric.getExecutionTime();
@@ -117,8 +123,8 @@ public class Controller<T, V> implements MetricsObserver{
         return max;
     }
 
-    public long getMinExecutionTime(){
-        long min = metricList.get(0).getExecutionTime();
+    public double getMinExecutionTime(){
+        double min = metricList.get(0).getExecutionTime();
         for (Metric metric : metricList) {
             if (metric.getExecutionTime() < min) {
                 min = metric.getExecutionTime();
@@ -127,11 +133,19 @@ public class Controller<T, V> implements MetricsObserver{
         return min;
     }
 
-    public long getAverageExecutionTime(){
-        long sum = 0;
+    public double getAverageExecutionTime(){
+        double sum = 0;
         for (Metric metric : metricList) {
             sum += metric.getExecutionTime();
         }
         return sum/metricList.size();
+    }
+
+    public int getTotalUsedMemory(){
+        int sum = 0;
+        for (Metric metric : metricList) {
+            sum += metric.getUsedMemory();
+        }
+        return sum;
     }
 }

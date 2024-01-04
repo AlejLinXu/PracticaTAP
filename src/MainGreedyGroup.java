@@ -62,5 +62,11 @@ public class MainGreedyGroup {
             invoker.getAssignedFunctions().forEach(System.out::println);
             i++;
         }
+
+        List<Metric> metrics = controller.getMetrics();
+        for (Metric metric : metrics) {
+            System.out.println("Action: " + metric.getAction() + ", Execution Time: " + metric.getExecutionTime() + " ms, Used Memory: " + metric.getUsedMemory() + " MB");
+        }
+        System.out.println("Average Execution Time: " + controller.getAverageExecutionTime() + " ms, Max Execution Time: " + controller.getMaxExecutionTime() + " s, Min Execution Time: " + controller.getMinExecutionTime() + " s, Total Used Memory: " + controller.getTotalUsedMemory() + " MB");
     }
 }
