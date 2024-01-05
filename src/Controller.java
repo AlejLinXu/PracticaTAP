@@ -38,8 +38,8 @@ public class Controller<T, V> implements MetricsObserver{
         this.mapRam.put(action, ram);
     }
 
-    public void registerFactorialAction(String action, Callable<V> factorialAction, int ram) {
-        this.mapFactorialActions.put(action, factorialAction);
+    public void registerFactorialAction(String action, Callable<Integer> factorialAction, int ram) {
+        this.mapFactorialActions.put(action, (Callable<V>) factorialAction);
         this.mapRam.put(action, ram);
     }
 

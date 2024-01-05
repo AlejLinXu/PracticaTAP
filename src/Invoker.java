@@ -12,6 +12,7 @@ public class Invoker implements InvokerInterface {
     private int numAssignedFunctions = 0;
     private List<Function> assignedFunctions = new ArrayList<>();
 
+    private Cache cache = new Cache();
     private boolean cacheEnabled = false; //cache for decorator
     private boolean timerOn = false; //timer for decorator
     public Invoker(int availableRam) {
@@ -29,6 +30,13 @@ public class Invoker implements InvokerInterface {
 
     //getters y setters RAM
 
+    public Cache getCache() {
+        return cache;
+    }
+
+    public void setCache(Cache cache) {
+        this.cache = cache;
+    }
 
     public boolean isCacheEnabled() {
         return cacheEnabled;

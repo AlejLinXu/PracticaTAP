@@ -7,7 +7,10 @@
     <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="En principio ya funciona el main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemoizationDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoizationDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TimerDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TimerDecorator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +133,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
       </set>
     </attachedChunks>
   </component>
