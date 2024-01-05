@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Cache {
 
-    private static Map<String, Object> cache = new HashMap<>();
+    private static final Map<String, Object> cache = new HashMap<>();
 
     public static Object get(String id) {
         return cache.get(id);

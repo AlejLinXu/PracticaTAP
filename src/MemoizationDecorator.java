@@ -1,17 +1,19 @@
 import java.util.concurrent.Callable;
 
 public class MemoizationDecorator extends Decorator{
-    public MemoizationDecorator(Callable wrapee) {
+    public Invoker invoker;
+    public MemoizationDecorator(Callable wrapee, Invoker invoker) {
         super(wrapee);
+        this.invoker = invoker;
     }
 
     @Override
     public Object call() throws Exception {
 
-        Object result = Cache.get(wrapee.toString());
+        Object result = invoker.getCache().get(wrapee.toString());
         if (result == null) {
             result = wrapee.call();
-            Cache.put(wrapee.toString(), result);
+            invoker.getCache().put(wrapee.toString(), result);
             //System.out.println("Cache result: " + result);
         }else  {
             result = Cache.get(wrapee.toString());
