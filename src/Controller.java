@@ -1,9 +1,11 @@
 import java.util.*;
+import java.util.concurrent.Callable;
 import java.util.function.Function;
 
 public class Controller<T, V> implements MetricsObserver{
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
+    private final HashMap<String, Callable<V>> mapFactorialActions;
     private final HashMap<String, Integer> mapRam;
     private final IPolicyManager policy;
     private final List<MetricsObserver> metricsObservers;
@@ -19,6 +21,7 @@ public class Controller<T, V> implements MetricsObserver{
         this.policy = policy;
         this.metricsObservers = new ArrayList<>();
         this.metricList = new ArrayList<>();
+        this.mapFactorialActions = new HashMap<>();
     }
 
 //    public Controller() {
@@ -32,6 +35,11 @@ public class Controller<T, V> implements MetricsObserver{
 
     public void registerAction(String action, Function<T, V> f, int ram) {
         this.mapActions.put(action, f);
+        this.mapRam.put(action, ram);
+    }
+
+    public void registerFactorialAction(String action, Callable<V> factorialAction, int ram) {
+        this.mapFactorialActions.put(action, factorialAction);
         this.mapRam.put(action, ram);
     }
 
@@ -60,6 +68,33 @@ public class Controller<T, V> implements MetricsObserver{
             return result;
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
+    }
+
+    public V invokeCallable(String actionName) {
+        Callable<V> factorialAction = mapFactorialActions.get(actionName);
+        if (factorialAction != null) {
+            try {
+                // Check available RAM before executing
+                if (listInvokers.get(0).getAvailableRam() < mapRam.get(actionName)) {
+                    throw new IllegalArgumentException("Not enough RAM");
+                }
+
+                long startTime = System.nanoTime();
+                V result = factorialAction.call();
+                long endTime = System.nanoTime();
+                long executionTime = endTime - startTime;
+                double msExecution = (double) executionTime / 1000000.0;
+                int usedMemory = mapRam.get(actionName);
+
+                updateMetrics(actionName, msExecution, usedMemory);
+
+                return result;
+            } catch (Exception e) {
+                throw new RuntimeException("Error executing factorial action", e);
+            }
+        } else {
+            throw new IllegalArgumentException("Factorial action not registered: " + actionName);
+        }
     }
 
     /*public Future<Object> invokeAsync(String actionName, Map<String, Integer> params) {
@@ -92,6 +127,13 @@ public class Controller<T, V> implements MetricsObserver{
     public List<String> getActions() {
        //devuleve una lista con todas las acciones
         List<String> actions = new ArrayList<>(mapActions.keySet());
+        actions.sort(String::compareTo);
+        return actions;
+    }
+
+    public List<String> getFactorialActions() {
+        //devuleve una lista con todas las acciones
+        List<String> actions = new ArrayList<>(mapFactorialActions.keySet());
         actions.sort(String::compareTo);
         return actions;
     }
