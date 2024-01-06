@@ -14,9 +14,9 @@ public class MemoizationDecorator extends Decorator{
         if (result == null) {
             result = wrapee.call();
             invoker.getCache().put(wrapee.toString(), result);
-            //System.out.println("Cache result: " + result);
+            System.out.println("Cache result: " + invoker.getCache().get(wrapee.toString()));
         }else  {
-            result = Cache.get(wrapee.toString());
+            result = invoker.getCache().get(wrapee.toString());
         }
         return result;
     }

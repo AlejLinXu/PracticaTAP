@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="En principio ya funciona el main">
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDecorator.java" afterDir="false" />
@@ -232,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703679859459</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no">
+      <option name="closed" value="true" />
+      <created>1704498272489</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704498272489</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +267,8 @@
     <MESSAGE value="Pequeños cambios" />
     <MESSAGE value="Cambios en el observer, ahora cuadra mas el tiempo" />
     <MESSAGE value="En principio ya funciona el main" />
-    <option name="LAST_COMMIT_MESSAGE" value="En principio ya funciona el main" />
+    <MESSAGE value="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -5,11 +5,11 @@ public class Cache {
 
     private static final Map<String, Object> cache = new HashMap<>();
 
-    public static Object get(String id) {
+    public Object get(String id) {
         return cache.get(id);
     }
 
-    public static void put(String id, Object resultado) {
+    public void put(String id, Object resultado) {
         cache.put(id, resultado);
     }
 }

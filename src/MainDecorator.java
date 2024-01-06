@@ -41,11 +41,22 @@ public class MainDecorator {
 
             System.out.println("---------CACHE ENABLED---------");
             factorial1 = new MemoizationDecorator(factorial1, controller.getListInvokers().get(0));
+            factorial2 = new MemoizationDecorator(factorial2, controller.getListInvokers().get(0));
+            factorial3 = new MemoizationDecorator(factorial3, controller.getListInvokers().get(0));
+            factorial4 = new MemoizationDecorator(factorial4, controller.getListInvokers().get(0));
+            factorial5 = new MemoizationDecorator(factorial5, controller.getListInvokers().get(0));
 
-            int result = controller.invokeCallable("factorial1");
+            factorial1.call();
+            factorial2.call();
+            factorial3.call();
+            factorial4.call();
+            factorial5.call();
+
+
+            /*int result = controller.invokeCallable("factorial1");
             System.out.println("Result: " + result);
-        Cache invokerCache = controller.getListInvokers().get(0).getCache();
-        System.out.println("Cache: " + invokerCache);
+            Cache invokerCache = controller.getListInvokers().get(0).getCache();
+            System.out.println("Cache: " + invokerCache);*/
 
 
         controller.getListInvokers().forEach(invoker -> invoker.setTimerOn(true)); //turn on timer
