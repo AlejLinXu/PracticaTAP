@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.function.Function;
 
-public class Controller<T, V> implements MetricsObserver{
+public class Controller<T, V> implements MetricsObserver, IController<T, V>{
     private final ArrayList<Invoker> listInvokers;
     private final HashMap<String, Function<T, V>> mapActions;
     private final HashMap<String, Callable<V>> mapFactorialActions;
