@@ -3,9 +3,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class ActionProxy implements  InvocationHandler{
-
-    private Object target;
+public class ActionProxy implements InvocationHandler{
+    private final Object target;
 
     public ActionProxy(Object target) {
         this.target = target;
@@ -14,12 +13,12 @@ public class ActionProxy implements  InvocationHandler{
     public static Object newProxyInstance(Object target) {
         Class targetClass = target.getClass();
         Class[] interfaces = targetClass. getInterfaces ();
-        return Proxy.newProxyInstance (targetClass. getClassLoader (),
+        return Proxy.newProxyInstance (targetClass.getClassLoader(),
                 interfaces, new ActionProxy (target));
 
     }
     @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    public Object invoke(Object proxy, Method method, Object[] args) {
         Object invocationResult = null;
         try {
             System.out.println("Before method " + method.getName());

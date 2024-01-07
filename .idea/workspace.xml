@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no">
-      <change afterPath="$PROJECT_DIR$/src/ActionProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainActionProxy.java" afterDir="false" />
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Creo que ya va el main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ActionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ActionProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainActionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainActionProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,42 +37,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MainActionProxy.executor": "Run",
-    "Application.MainBigGroup.executor": "Run",
-    "Application.MainDecorator.executor": "Run",
-    "Application.MainFuture.executor": "Run",
-    "Application.MainGreedyGroup.executor": "Run",
-    "Application.MainPolicyManager.executor": "Run",
-    "Application.MainRoundRobin.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GreadyGroupStrategyTest.testAssignFunction.executor": "Run",
-    "JUnit.StrategyTest.GreadyGroupTest.executor": "Run",
-    "JUnit.StrategyTest.executor": "Run",
-    "JUnit.StrategyTest.testBigGroupStrategy.executor": "Run",
-    "JUnit.StrategyTest.testRoundRobinStrategy.executor": "Run",
-    "JUnit.StrategyTest.testUniformGroupStrategy.executor": "Run",
-    "JUnit.Tests.executor": "Run",
-    "JUnit.Tests.testGReadyGroupStrategy.executor": "Run",
-    "JUnit.Tests.testGreadyGroupStrategy.executor": "Run",
-    "JUnit.Tests.testRoundRobinStrategy.executor": "Run",
-    "JUnit.Tests.testUniformGroupStrategy.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/josep/OneDrive/Escritorio/PracticaTAP/PracticaTAP",
-    "onboarding.tips.debug.path": "C:/Users/ajxzo/IdeaProjects/PracticaTAP/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainActionProxy.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainBigGroup.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainDecorator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFuture.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainGreedyGroup.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainPolicyManager.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainRoundRobin.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.GreadyGroupStrategyTest.testAssignFunction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.GreadyGroupTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.testBigGroupStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.testRoundRobinStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.testUniformGroupStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Tests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Tests.testGReadyGroupStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Tests.testGreadyGroupStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Tests.testRoundRobinStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Tests.testUniformGroupStrategy.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/josep/OneDrive/Escritorio/PracticaTAP/PracticaTAP&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ajxzo/IdeaProjects/PracticaTAP/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -130,7 +130,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
       </set>
     </attachedChunks>
   </component>
@@ -267,7 +267,8 @@
     <MESSAGE value="Cambios en el observer, ahora cuadra mas el tiempo" />
     <MESSAGE value="En principio ya funciona el main" />
     <MESSAGE value="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el MemoizationDecorator, algo hace pero no estoy seguro de si lo guarda en la cache o no" />
+    <MESSAGE value="Creo que ya va el main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creo que ya va el main" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

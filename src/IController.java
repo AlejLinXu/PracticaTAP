@@ -6,12 +6,12 @@ import java.util.function.Function;
 
 public interface IController<T, V> {
     //interface to be implemented by the Controller class
-    public void registerAction(String action, Function<T, V> f, int ram);
-    public void registerFactorialAction(String action, Callable<Integer> factorialAction, int ram);
+    void registerAction(String action, Function<T, V> f, int ram);
+    void registerFactorialAction(String action, Callable<Integer> factorialAction, int ram);
 
-    public List<Invoker> getListInvokers();
-    public Object invoke(String actionName, Map<String, Integer> params);
-    public V invokeCallable(String actionName);
+    List<Invoker> getListInvokers();
+    Object invoke(String actionName, Map<String, Integer> params);
+    V invokeCallable(String actionName);
 
 
 }

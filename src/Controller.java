@@ -69,8 +69,8 @@ public class Controller<T, V> implements MetricsObserver, IController<T, V>{
         }
         else throw new IllegalArgumentException("Action not registered: " + actionName);
     }
-
-    public V invokeCallable(String actionName) {
+    @Override
+    public V invokeCallable(String actionName){
         Callable<V> factorialAction = mapFactorialActions.get(actionName);
         if (factorialAction != null) {
             try {
