@@ -4,7 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="JavaDoc añadido" />
+    <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="JavaDoc añadido">
+      <change afterPath="$PROJECT_DIR$/src/CountWords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action.html" beforeDir="false" afterPath="$PROJECT_DIR$/Action.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ActionProxy.html" beforeDir="false" afterPath="$PROJECT_DIR$/ActionProxy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigGroupStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/BigGroupStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cache.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cache.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/Controller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decorator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Decorator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreedyGroupStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/GreedyGroupStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IController.html" beforeDir="false" afterPath="$PROJECT_DIR$/IController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IPolicyManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/IPolicyManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Invoker.html" beforeDir="false" afterPath="$PROJECT_DIR$/Invoker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvokerInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/InvokerInterface.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainActionProxy.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainActionProxy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainBigGroup.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainBigGroup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainDecorator.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainDecorator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainFuture.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainFuture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainGreedyGroup.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainGreedyGroup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainRoundRobin.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainRoundRobin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainUniformGroup.html" beforeDir="false" afterPath="$PROJECT_DIR$/MainUniformGroup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoizationDecorator.html" beforeDir="false" afterPath="$PROJECT_DIR$/MemoizationDecorator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metric.html" beforeDir="false" afterPath="$PROJECT_DIR$/Metric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetricsObserver.html" beforeDir="false" afterPath="$PROJECT_DIR$/MetricsObserver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResultFuture.html" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFuture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundRobinStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/RoundRobinStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StrategyTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/StrategyTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimerDecorator.html" beforeDir="false" afterPath="$PROJECT_DIR$/TimerDecorator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformGroupStrategy.html" beforeDir="false" afterPath="$PROJECT_DIR$/UniformGroupStrategy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/type-search-index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704737242119</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="JavaDoc añadido">
+      <option name="closed" value="true" />
+      <created>1704737287505</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1704737287505</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
