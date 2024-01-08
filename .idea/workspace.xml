@@ -7,9 +7,15 @@
     <list default="true" id="d2680c06-e2dd-4567-8ad2-c16a4fdf32c5" name="Changes" comment="Creo que ya va el main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ActionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ActionProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainActionProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainActionProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Decorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Decorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IPolicyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPolicyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Metric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Metric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MetricsObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MetricsObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResultFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultFuture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +87,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainActionProxy">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PracticaTAP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainActionProxy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainActionProxy" />
       <module name="PracticaTAP" />
@@ -103,13 +116,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainGreedyGroup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainGreedyGroup" />
-      <module name="PracticaTAP" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainRoundRobin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainRoundRobin" />
       <module name="PracticaTAP" />
@@ -119,18 +125,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainActionProxy" />
         <item itemvalue="Application.MainDecorator" />
         <item itemvalue="Application.MainRoundRobin" />
         <item itemvalue="Application.MainBigGroup" />
-        <item itemvalue="Application.MainGreedyGroup" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
       </set>
     </attachedChunks>
   </component>
